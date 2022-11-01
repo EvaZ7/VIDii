@@ -26,7 +26,7 @@ Mijn startniveau is Rood
   <summary>De eerste versie/schets van je ontwerp & je persoonlijke uitdaging</summary>
 
   ### De eerste versie/schets:
-  <img src="readme-images/dummy-plaatje.jpg" width="375px" alt="eerste versie/schets">
+  <img src="readme-images/schets1.jpeg" width="375px" alt="eerste versie/schets">
 
 
   ### Je ambitie: 
@@ -166,8 +166,8 @@ Mijn startniveau is Rood
 
 Nb. Wees specifiek ('css-tricks' als bron is bijv. niet specifiek genoeg).
 
-1. bron 1
-2. bron 2
+1. Fonts, 1. (z.d.). Fredoka Font Family Â·. 1001 Fonts. Geraadpleegd op 1 november 2022, van https://www.1001fonts.com/fredoka-one-font.html 
+2. Ingthorsson, S. (z.d.). CSS DOuble Text Stroke. codepen. Geraadpleegd op 1 november 2022, van https://codepen.io/ingthorsson/pen/QVRVZP?editors=1100
 3. ...
 
 </details>

@@ -4,15 +4,44 @@
 
 /* naar een idee van Jen Simmons */
 *, *::after, *::before {
-  box-sizing:border-box;  
+  box-sizing: border-box;  
 }
-
+/* @font-face {
+  font-family: legofont;
+  src: url(/assets/legofont.ttf);
+  font-weight: initial;
+  font-style: normal;
+} */
+/*import custom lego font*/
+@font-face {
+  font-family: fredoka;
+  src: url(/assets/fredoka.ttf);
+  font-weight: bold;
+  font-style: normal;
+}
 body {
-  margin:0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+
 }
 
 button:not([disabled]) {
-  cursor:pointer;
+  cursor: pointer;
+}
+
+/*scrollbar*/
+::-webkit-scrollbar {
+  width: 0px;
+  height: 0.5em;
+}
+::-webkit-scrollbar-track {
+  background-color: rgb(18 18 36);
+}
+::-webkit-scrollbar-thumb {
+  background: red;
+  border-radius: 0.2em;
 }
 
 
@@ -24,7 +53,7 @@ button:not([disabled]) {
 /*********************/
 
 :root {
-  --color-headings:crimson
+  --color-text: white;
 }
 
 
@@ -35,8 +64,94 @@ button:not([disabled]) {
 /* ALGEMENE STYLING */
 /********************/
 
+header {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgb(18 18 36);
+
+  grid-column: 1;
+  grid-row: 1;
+
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr;
+  place-items: center;
+  place-content: center;
+}
+
+/* h1, .linetwo {
+  font-family: fredoka;
+  color: var(--color-headings);
+  background: transparent;
+
+  Will override color (regardless of order) 
+  -webkit-text-stroke-width: 5px;
+  -webkit-text-stroke-color: black;
+  width: 5em;
+  height: 5em;
+  margin: 0em;
+
+  display: grid;
+  place-content: center;
+
+  text-align: center;
+  font-size: 4em;
+  font-style: italic; 
+  text-transform: uppercase;
+  letter-spacing: -0.05em;
+  text-shadow: 
+  0.07em 0.03em 0.01em rgb(242, 255, 0),
+  0.03em 0.07em 0.01em rgb(242, 255, 0),
+  -0.07em 0.03em 0.01em rgb(242, 255, 0),
+  0.03em -0.07em 0.01em rgb(242, 255, 0); 
+
+  z-index: 0;
+
+}
+h1:before,.linetwo:before {
+  -webkit-text-stroke: 5px black;
+  z-index: -1;
+}
+.linetwo:after {
+  -webkit-text-stroke: 15px yellow;
+  z-index: -2;
+  background-color: red;
+} */
+
 h1 {
-  color:var(--color-headings);
+  font-family: fredoka;
+  color: var(--color-text);
+  position: absolute;
+  text-align: center;
+  aspect-ratio: auto 1 / 1;
+  max-height: 5em;
+
+  z-index: 0;
+  font-size: 2.5em;
+  
+  font-style: italic;
+  text-transform: uppercase;
+  display: grid;
+  place-content: center;
+  -webkit-text-stroke: 0.08em black;
+}
+
+h1:before {
+  content: attr(title);
+  position: absolute;
+  aspect-ratio: auto 1 / 1;
+  display: grid;
+  place-content: center;
+  -webkit-text-stroke: 0.15em yellow; 
+  background: red;
+
+  z-index: -1;
+}
+
+header p {
+  font-family: fredoka;
+  color: var(--color-text);
+  grid-row: 2;
 }
 
 
