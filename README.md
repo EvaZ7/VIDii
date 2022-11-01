@@ -1,6 +1,7 @@
 # Procesverslag
-Markdown is een simpele manier om HTML te schrijven.  
-Markdown cheat cheet: [Hulp bij het schrijven van Markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet).
+
+![lego logo](readme-images/evolution.jpeg)
+
 
 Nb. De standaardstructuur en de spartaanse opmaak van de README.md zijn helemaal prima. Het gaat om de inhoud van je procesverslag. Besteedt de tijd voor pracht en praal aan je website.
 
@@ -9,14 +10,13 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
 
 
 
-## Jij
+## Wie ben ik
 
 ### Ontwerper:
-Sanne 't Hooft (vervangen door jouw naam)
+Eva Zaadnoorijk
 
 #### Je startniveau:
-Mijn startniveau is: hier je startniveau (kies uit zwart, rood óf blauw)
-
+Mijn startniveau is Rood
 
 
 
@@ -43,6 +43,15 @@ Mijn startniveau is: hier je startniveau (kies uit zwart, rood óf blauw)
 
 ## Voortgang/Feedback 1
 
+**Idee 1:**
+
+- leuk idee oppassen met achtergrond niet met die nopjes, die wolk kan je er zo niet opklikken, het is technisch niet mogelijk.
+- Bouwinstructies wolk planten en voorwerpen opzoeken, kijk goed naar bekende blokjes.
+- Stapjes goed prima, toont voorgang/ tijdlijn. Laat veel verschil zien in thema's en voorwerpen.
+- Kijk naar stopmotion animaties voor poppetjes wordt veel gebruikt voor lego op youtube.
+- Oppassen met kleurgebruik te veel kleuren dat leidt af. Misschien een thema een set gebruiken als inspiratie.
+- ... idee speelgoedplankje met lego sets toont voortgang.
+
 <details>
   <summary>Mijn bevindingen + wijzigingen (minimaal 5)</summary>
 
@@ -51,8 +60,6 @@ Mijn startniveau is: hier je startniveau (kies uit zwart, rood óf blauw)
 
   #### oplossing:
   Beschrijving hoe je het hebt hebt opgelost of als het niet gelukt is hoe je het zou oplossen (tekst en afbeeding(en)).
-
-
 
   ### Bevinding 2:
   Omschrijving van wat er nog niet orde was (tekst en afbeeding(en)).
