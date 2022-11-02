@@ -12,6 +12,25 @@
   font-weight: initial;
   font-style: normal;
 } */
+body {
+  margin: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+}
+
+button:not([disabled]) {
+  cursor: pointer;
+}
+
+/*********************/
+/* CUSTOM PROPERTIES */
+/*********************/
+:root {
+  --color-text: rgb(255 255 255);
+  --lego-red: rgb(214 0 38);
+}
+
 /*import custom lego font*/
 @font-face {
   font-family: fredoka;
@@ -19,17 +38,10 @@
   font-weight: bold;
   font-style: normal;
 }
-body {
-  margin: 0;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr;
 
-}
-
-button:not([disabled]) {
-  cursor: pointer;
-}
+/********************/
+/****EXTRA STYLING****/
+/********************/
 
 /*scrollbar*/
 ::-webkit-scrollbar {
@@ -40,30 +52,13 @@ button:not([disabled]) {
   background-color: rgb(18 18 36);
 }
 ::-webkit-scrollbar-thumb {
-  background: red;
+  background: rgb(255 0 0);
   border-radius: 0.2em;
 }
 
-
-
-
-
-/*********************/
-/* CUSTOM PROPERTIES */
-/*********************/
-
-:root {
-  --color-text: white;
-}
-
-
-
-
-
 /********************/
-/* ALGEMENE STYLING */
+/*******HEADER*******/
 /********************/
-
 header {
   width: 100vw;
   height: 100vh;
@@ -76,7 +71,6 @@ header {
   grid-template-rows: 1fr 1fr;
   grid-template-columns: 1fr;
   place-items: center;
-  place-content: center;
 }
 
 /* h1, .linetwo {
@@ -118,6 +112,7 @@ h1:before,.linetwo:before {
   background-color: red;
 } */
 
+/*lego logo*/
 h1 {
   font-family: fredoka;
   color: var(--color-text);
@@ -142,19 +137,64 @@ h1:before {
   aspect-ratio: auto 1 / 1;
   display: grid;
   place-content: center;
-  -webkit-text-stroke: 0.15em yellow; 
-  background: red;
+  -webkit-text-stroke: 0.15em rgb(255 255 0); 
+  background: rgb(255 0 0);
 
   z-index: -1;
 }
-
+/*kleine toelichting*/
 header p {
   font-family: fredoka;
   color: var(--color-text);
   grid-row: 2;
 }
 
+/********************/
+/*******MAIN*********/
+/********************/
+/*Lego trap*/
+main {
+  margin: 0;
+  padding: 0;
+}
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  grid-column: 2;
+  width: 250em;
+  height: 50vh;
 
+  display: grid;
+  grid-template-columns: 
+  1fr 1fr 1fr 1fr 1fr 
+  1fr 1fr 1fr 1fr 1fr 
+  1fr 1fr 1fr 1fr 1fr 
+  1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 
+  1fr 1fr 1fr 1fr 1fr;
+
+  position: absolute;
+  bottom: 0;
+}
+ul li{
+  background-color: var(--lego-red);
+  box-shadow: inset -0.15em -0.15em 0.25em rgba(85, 1, 1, 0.3);
+}
+li:first-of-type {
+  grid-column-start: 17;
+  background-image: linear-gradient(to right,rgb(255, 255, 255) 1.8em, var(--lego-red) 0em);
+  background-position: top;
+  background-size: 2.95em 0.5em;
+  background-repeat: repeat-x;
+}
+li:nth-of-type(5) {
+  grid-column-start: 13;
+}
+li:nth-of-type(13) {
+  grid-column-start: 9;
+}
+li:nth-of-type(25) {
+  grid-column-start: 5;
+}
 /* ... */
-
-
