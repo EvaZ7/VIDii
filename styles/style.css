@@ -1,3 +1,18 @@
+/*importeren custom lego font*/
+@font-face {
+  font-family: 'fredoka';
+  src: url('/assets/fonts/fredoka-webfont.woff2') format('woff2'),
+       url('/assets/fonts/fredoka-webfont.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+
+}
+/* @font-face {
+  font-family: legofont;
+  src: url(/assets/legofont.ttf);
+  font-weight: initial;
+  font-style: normal;
+} */
 /*************/
 /* CSS RESET */
 /*************/
@@ -6,17 +21,13 @@
 *, *::after, *::before {
   box-sizing: border-box;  
 }
-/* @font-face {
-  font-family: legofont;
-  src: url(/assets/legofont.ttf);
-  font-weight: initial;
-  font-style: normal;
-} */
+
 body {
   margin: 0;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr;
+  background-color: var(--lego-royal-blue);
 }
 
 button:not([disabled]) {
@@ -29,14 +40,10 @@ button:not([disabled]) {
 :root {
   --color-text: rgb(255 255 255);
   --lego-red: rgb(214 0 38);
-}
-
-/*import custom lego font*/
-@font-face {
-  font-family: fredoka;
-  src: url(/assets/fredoka.ttf);
-  font-weight: bold;
-  font-style: normal;
+  --lego-white: rgb(255, 255, 244);
+  --lego-yellow: rgb(247 209 18);
+  --red-brick-shadow: rgba(85 1 1 / 0.3);
+  --lego-royal-blue: rgb(120 191 234);
 }
 
 /********************/
@@ -114,11 +121,11 @@ h1:before,.linetwo:before {
 
 /*lego logo*/
 h1 {
-  font-family: fredoka;
+  font-family: 'fredoka', 'Arial Black', 'Helvetica';
   color: var(--color-text);
   position: absolute;
   text-align: center;
-  aspect-ratio: auto 1 / 1;
+  aspect-ratio: 1 / 1;
   max-height: 5em;
 
   z-index: 0;
@@ -134,11 +141,11 @@ h1 {
 h1:before {
   content: attr(title);
   position: absolute;
-  aspect-ratio: auto 1 / 1;
+  aspect-ratio: 1 / 1;
   display: grid;
   place-content: center;
   -webkit-text-stroke: 0.15em rgb(255 255 0); 
-  background: rgb(255 0 0);
+  background: var(--lego-red);
 
   z-index: -1;
 }
@@ -152,12 +159,23 @@ header p {
 /********************/
 /*******MAIN*********/
 /********************/
-/*Lego trap*/
 main {
   margin: 0;
   padding: 0;
+  display: flex;
+  flex-direction: row;
 }
-ul {
+h2 {
+  color: var(--lego-white);
+  display: flex;
+  justify-content: center;
+
+  font-family: fredoka;
+  font-style: italic;
+  -webkit-text-stroke: 0.08em black;
+}
+/*Lego trap*/
+ul:first-of-type {
   margin: 0;
   padding: 0;
   list-style: none;
@@ -175,26 +193,182 @@ ul {
   1fr 1fr 1fr 1fr 1fr;
 
   position: absolute;
-  bottom: 0;
+  bottom: -0.5em;
+  z-index: 0;
 }
-ul li{
+ul:first-of-type li{
   background-color: var(--lego-red);
   box-shadow: inset -0.15em -0.15em 0.25em rgba(85, 1, 1, 0.3);
 }
-li:first-of-type {
-  grid-column-start: 17;
-  background-image: linear-gradient(to right,rgb(255, 255, 255) 1.8em, var(--lego-red) 0em);
+ul:first-of-type li:first-of-type, ul:first-of-type li:nth-of-type(2), ul:first-of-type li:nth-of-type(3), ul:first-of-type li:nth-of-type(4),
+ul:first-of-type li:nth-of-type(5), ul:first-of-type li:nth-of-type(6), ul:first-of-type li:nth-of-type(7), ul:first-of-type li:nth-of-type(8),
+ul:first-of-type li:nth-of-type(13), ul:first-of-type li:nth-of-type(14), ul:first-of-type li:nth-of-type(15), ul:first-of-type li:nth-of-type(16),
+ul:first-of-type li:nth-of-type(25), ul:first-of-type li:nth-of-type(26), ul:first-of-type li:nth-of-type(27), ul:first-of-type li:nth-of-type(28),
+ul:first-of-type li:nth-of-type(41), ul:first-of-type li:nth-of-type(42), ul:first-of-type li:nth-of-type(43), ul:first-of-type li:nth-of-type(44) {
+  background-image: linear-gradient(to right,var(--lego-royal-blue) 1.8em, var(--lego-red) 0em); /*make var*/
   background-position: top;
   background-size: 2.95em 0.5em;
   background-repeat: repeat-x;
 }
-li:nth-of-type(5) {
+ul:first-of-type li:first-of-type {
+  grid-column-start: 17;
+}
+ul:first-of-type li:nth-of-type(5) {
   grid-column-start: 13;
 }
-li:nth-of-type(13) {
+ul:first-of-type li:nth-of-type(13) {
   grid-column-start: 9;
 }
-li:nth-of-type(25) {
+ul:first-of-type li:nth-of-type(25) {
   grid-column-start: 5;
+}
+
+/*lego poppetje 1*/
+section {
+  display: flex;
+  flex-direction: row;
+
+  padding-left: 15em;
+}
+section:first-of-type {
+  position: absolute;
+  bottom: 2.5em;
+}
+section:first-of-type> div {
+  display: flex;
+  flex-direction: column;
+
+  padding: 1em;
+
+  align-items: center;
+}
+section:first-of-type> div:hover{
+  transform-origin: bottom left;
+  animation: wiggle 0.8s linear infinite;
+}
+section:first-of-type div div:first-of-type{
+  background-color: var(--lego-white);
+  aspect-ratio: 2 / 1;
+  width: 4.5em;
+
+  border-radius: 0.6em 0.6em 0em 0em;
+  clip-path: polygon(0 0%, 100% 0%, 93% 61%, 100% 100%, 0 100%, 6% 61%);
+  border-top: 0.25em solid var(--lego-white);
+  border-bottom: 0.5em solid var(--lego-white);
+  box-shadow: inset 0.1em 0.15em 0.45em rgb(171 171 171);
+  z-index: 1;
+}
+section:first-of-type div div:nth-of-type(2){
+  background-color: var(--lego-yellow);
+  aspect-ratio: 1 / 1;
+  width: 3.5em;
+
+  margin-top: -1em;
+  border-radius: 1em;
+
+  box-shadow: inset 0.1em 0.5em 0.8em rgb(120 116 33);
+}
+section:first-of-type div div:nth-of-type(3){
+  background-color: var(--lego-yellow);
+  aspect-ratio: 3 / 1;
+  width: 1.8em;
+
+  box-shadow: inset 0em 0.1em 0.2em rgb(80 75 0);
+}
+section:first-of-type div div:nth-of-type(4) {
+  background-color: rgb(0 0 0);
+  height: 3.5em;
+  width: 5em;
+
+  border-radius: 0.8em 0.8em 0em 0em;
+  /* border-image: linear-gradient(to bottom,rgb(255 255 255), rgb(0 0 0)) 1 20%; */
+  border-right: 0.4em solid rgba(61 61 61 / 0.58);
+  border-left: 0.4em solid rgba(61 61 61 / 0.58);
+  clip-path: polygon(0 0, 100% 0, 94% 62%, 100% 100%, 0 100%, 6% 62%);
+
+  box-shadow: inset 0.2em 0.3em 0.8em rgba(114 114 114 / 0.522);
+}
+section:first-of-type div div:nth-of-type(5) {
+  background-color: var(--lego-white);
+  aspect-ratio: 5 / 1;
+  width: 5em;
+
+  box-shadow: inset 0.3em 0.2em 0.3em rgb(171 171 171);
+}
+section:first-of-type div div:nth-of-type(6) {
+  background-color: rgb(0 0 0);
+  clip-path: polygon(0 0, 100% 0, 88% 100%, 12% 100%);
+  height: 3.5em;
+  width: 5em;
+
+  box-shadow: inset 0.5em 0.3em 0.5em rgba(114 114 114 / 0.522);
+}
+section:first-of-type div div:nth-of-type(7) {
+  background-color: rgb(0 0 0);
+  aspect-ratio: 5 / 1;
+  width: 5em;
+
+  box-shadow: inset 0.1em 0.08em 0.4em rgba(114 114 114 / 0.522);
+}
+
+/*lego blokje 1*/
+section:first-of-type article {
+  background-color: hotpink;
+
+  height: 14em;
+  aspect-ratio: 2 / 4;
+
+  /* border-left: inset 1em;
+  border-bottom: inset 1em; */
+  border: inset 1em;
+  border-left-color: rgb(248, 40, 144);
+  border-bottom-color: rgb(186, 16, 101);
+  border-color: rgba(186, 43, 114, 0.689);
+  outline: 0.5em solid rgb(251, 122, 186);
+
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  align-items: center;
+
+  margin-left: 12em;
+  position: absolute;
+  bottom: 1.5em;
+}
+section:first-of-type article:hover { 
+  animation: rotate 1s linear;
+  animation-fill-mode: forwards;
+  transform-origin: bottom right;
+}
+
+/********************/
+/****ANIMATIES******/
+/********************/
+/*poppetje1*/
+@keyframes wiggle {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-5deg);
+  }
+  50% {
+    transform: rotate(-10deg);
+  }
+  75% {
+    transform: rotate(-5deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate3d(0);
+  }
+  100% {
+    transform: rotate3d(1, 1, 1, 45deg);
+  }
 }
 /* ... */
