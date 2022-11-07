@@ -170,4 +170,11 @@ Nb. Wees specifiek ('css-tricks' als bron is bijv. niet specifiek genoeg).
 2. Ingthorsson, S. (z.d.). CSS DOuble Text Stroke. codepen. Geraadpleegd op 1 november 2022, van https://codepen.io/ingthorsson/pen/QVRVZP?editors=1100
 3. Bio, M. (z.d.). css border spaced gaps between dots. Codepen. Geraadpleegd op 2 november 2022, van https://codepen.io/michelbio/pen/mBpreY
 
+https://www.sinds1971.nl/cssvoordedames/8-animations.html
+http://www.jennyscrayoncollection.com/2021/06/all-current-lego-colors.html
+https://rebrickable.com/colors/
+https://icons8.com/icons/set/lego-brick
+https://gameofbricks.eu/blogs/news/the-first-lego-minifigure-history-of-the-lego-minifigure
+https://www.lego.com/nl-be/kids/characters/minifigures/police-officer-52ead080c2c645b29a37c209e369aef2
+https://www.brothers-brick.com/2018/08/31/the-minifigure-turns-40-a-colorful-history/lego-minifigure-40-years-infographic/
 </details>
