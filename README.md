@@ -177,4 +177,9 @@ https://icons8.com/icons/set/lego-brick
 https://gameofbricks.eu/blogs/news/the-first-lego-minifigure-history-of-the-lego-minifigure
 https://www.lego.com/nl-be/kids/characters/minifigures/police-officer-52ead080c2c645b29a37c209e369aef2
 https://www.brothers-brick.com/2018/08/31/the-minifigure-turns-40-a-colorful-history/lego-minifigure-40-years-infographic/
+
+img
+https://codemyui.com/lego-style-loading-animation/
+https://imgur.com/aRWUh5f 
+https://s3-us-west-2.amazonaws.com/media.brothers-brick.com/wp-content/uploads/2018/10/LEGO_WP_1920x1200_WHT.png 
 </details>

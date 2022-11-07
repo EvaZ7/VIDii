@@ -1,8 +1,8 @@
 /*importeren custom lego font*/
 @font-face {
   font-family: 'fredoka';
-  src: url('/assets/fonts/fredoka-webfont.woff2') format('woff2'),
-       url('/assets/fonts/fredoka-webfont.woff') format('woff');
+  src: url('../assets/fonts/fredoka-webfont.woff2') format('woff2'),
+       url('../assets/fonts/fredoka-webfont.woff') format('woff');
   font-weight: bold;
   font-style: normal;
 
@@ -23,13 +23,15 @@
 }
 html {
   overflow-y: none;
+  height: 100vh;
 }
 body {
+  height: 100vh;
   margin: 0;
   display: grid;
   grid-template-columns: 100vw 250em; /*widthreset*/
   grid-template-rows: 100vh;
-  background-color: var(--lego-royal-blue);
+  background: 100vh;
 }
 
 button:not([disabled]) {
@@ -174,7 +176,15 @@ main {
   grid-column: 2;
   grid-row: 1;
 
-  width: 250em; /*widthreset*/
+  width: 250em;
+  height: 100vh; /*widthreset*/
+
+  background-color: var(--lego-royal-blue);
+  background-image: url("../images/legowhiteprint.png");
+  /* background-size: 100vw 100vh; */
+  /* background-blend-mode: luminosity; */
+  background-blend-mode: darken;
+
 }
 h2 {
   color: var(--lego-white);
@@ -205,8 +215,7 @@ ul:first-of-type {
   grid-template-rows: 
   1fr 1fr 1fr 1fr 1fr;
 
-  position: absolute;
-  bottom: -0.5em;
+  margin-top: 50vh;
   z-index: 0;
 }
 ul:first-of-type li{
@@ -255,7 +264,7 @@ section:first-of-type>button, section:nth-of-type(2)>button {
   display: flex;
   flex-direction: column;
 
-  padding: 1em 5em 1em 5em;
+  padding: 1em 5em 2.1vh 4.5em;
 
   align-items: center;
 }
@@ -284,8 +293,8 @@ section:first-of-type button div:nth-of-type(2), section:nth-of-type(2) button>d
 }
 section:first-of-type button div:nth-of-type(3), section:nth-of-type(2) button>div:nth-of-type(3){
   background-color: var(--lego-yellow);
-  aspect-ratio: 3 / 1;
-  width: 2.8em;
+  aspect-ratio: 5 / 1;
+  width: 2.3em;
 
   box-shadow: inset 0em 0.1em 0.2em rgb(80 75 0);
 }
@@ -330,7 +339,8 @@ section:first-of-type button div:nth-of-type(4).click, section:first-of-type but
 }
 section:first-of-type> button:focus {
   outline: none;
-  background: radial-gradient(circle, var(--lego-white) 0%, rgba(255,255,255,0) 60%);
+  /* background: radial-gradient(circle, var(--lego-white) 0%, rgba(255,255,255,0) 60%); */
+  filter: drop-shadow(0 0 1.5em var(--lego-red));
 }
 section:first-of-type> button:hover, section:first-of-type> button:focus{
   transform-origin: bottom left;
@@ -363,7 +373,7 @@ section:first-of-type article {
 
   margin-left: 15.3em;
   position: absolute;
-  bottom: 1em;
+  bottom: 2.1vh;
 }
 section:first-of-type article:hover, section:first-of-type article:focus { 
   animation: rotate 1s linear;
@@ -375,7 +385,10 @@ section:first-of-type article:hover, section:first-of-type article:focus {
 /*****************/
 section:nth-of-type(2) {
   bottom: 8em;
-  margin-left: 70em;
+  margin-left: 63.5em;
+}
+section:nth-of-type(2) button{
+  padding: 0;
 }
 section:nth-of-type(2) button>div:first-of-type {
   background-color: var(--lego-black);
@@ -396,7 +409,7 @@ section:nth-of-type(2) button>div:nth-of-type(2) div:nth-of-type(1), section:nth
 
   margin: 2.2em 0em 0em 0em;
 }
-section:nth-of-type(2) button>div:nth-of-type(2) div:nth-of-type(2) {
+section:nth-of-type(2) button>div:nth-of-type(2) div:nth-of-type(2) { /*hoofd*/
   width: 1.1em;
   height: 0.9em;
 
@@ -405,6 +418,7 @@ section:nth-of-type(2) button>div:nth-of-type(2) div:nth-of-type(2) {
   border-bottom: 0.2em solid var(--lego-black);
   border-radius: 1.4em;
 }
+
 section:nth-of-type(2) button>div:nth-of-type(4) { /*armen en torso*/
   display: flex;
   flex-direction: row;
@@ -413,15 +427,49 @@ section:nth-of-type(2) button>div:nth-of-type(4)>div:nth-of-type(2) { /*torso*/
   background-color: var(--lego-black);
   clip-path: polygon(15% 0, 85% 0, 100% 100%, 0% 100%);
 
-  width: 6em;
-  height: 5em;
+  width: 5em;
+  height: 4.5em;
+
+  box-shadow: inset 0.6em 0.3em 0.5em rgb(50 50 50);
+
+  z-index: 1;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
 }
-section:nth-of-type(2) button>div:nth-of-type(4)>div:nth-of-type(1), section:nth-of-type(2) button>div:nth-of-type(4)>div:nth-of-type(3) { /*arm en hand*/
+section:nth-of-type(2) button>div:nth-of-type(4)>div:nth-of-type(2) div { /*knoopjes*/
+  background-color: var(--lego-white);
+
+  width: 0.5em;
+  border-radius: 0.5em;
+  aspect-ratio: 1 / 1;
+}
+section:nth-of-type(2) button>div:nth-of-type(4)>div:nth-of-type(2) div:first-of-type { /*badge*/
+  background-color: var(--lego-white);
+
+  position: absolute;
+
+  z-index: 3;
+  margin: -1.8em 0em 0em 1.9em;
+
+  clip-path: polygon(50% 0%, 64% 25%, 100% 16%, 89% 55%, 100% 85%, 50% 100%, 0 85%, 11% 55%, 0 16%, 34% 25%);
+
+  width: 1em;
+  border-radius: 0.3em;
+  aspect-ratio: 1 / 1;
+}
+
+section:nth-of-type(2) button>div:nth-of-type(4)>div:nth-of-type(1), section:nth-of-type(2) button>div:nth-of-type(4)>div:nth-of-type(3) { /*arm en hand links en rechts*/
   display: flex;
   flex-direction: column;
   align-items: flex-end;
 }
-section:nth-of-type(2) button>div:nth-of-type(4)>div:nth-of-type(1) div:first-of-type{ /*arm links*/
+section:nth-of-type(2) button>div:nth-of-type(4)>div:nth-of-type(3) { /*arm en hand rechts*/
+  align-items: flex-start;
+}
+section:nth-of-type(2) button>div:nth-of-type(4)>div:nth-of-type(1) div:first-of-type { /*arm links*/
   background-color: var(--lego-black);
 
   clip-path: polygon(100% 0%, 80% 3%, 72% 10%, 57% 47%, 60% 100%, 93% 100%, 90% 57%, 100% 23%);
@@ -429,35 +477,85 @@ section:nth-of-type(2) button>div:nth-of-type(4)>div:nth-of-type(1) div:first-of
   width: 4em;
   height: 3.5em;
 
-  margin: 0.25em -0.7em 0em 0em;
+  margin: 0em -0.8em 0em 0em;
 
-  transform: rotate(6deg);
-}
-section:nth-of-type(2) button>div:nth-of-type(4)>div:nth-of-type(1) div:nth-of-type(2) { /*handje links*/
-  /* background-color: var(--lego-yellow); */
-  width: 2em;
-  height: 1.5em;
+  transform: rotate(12deg);
 
-  border-top: 0.5em solid var(--lego-yellow);
-  border-left: 0.5em solid var(--lego-yellow);
-  border-right: 0.5em solid var(--lego-yellow);
-  border-radius: 10em;
-
-  margin-right: -0.4em;
+  box-shadow: inset 2.7em 0.5em 0.2em rgb(50 50 50);
 }
 section:nth-of-type(2) button>div:nth-of-type(4)>div:nth-of-type(3) div:first-of-type{ /*arm rechts*/
   background-color: var(--lego-black);
 
-  clip-path: polygon(100% 0%, 80% 3%, 72% 10%, 57% 47%, 60% 100%, 93% 100%, 90% 57%, 100% 23%); /*anders*/
+  clip-path: polygon(0% 0%, 20% 3%, 28% 10%, 47% 47%, 40% 100%, 7% 100%, 10% 57%, 0% 23%);
 
   width: 4em;
   height: 3.5em;
 
-  margin: 0.25em 0em 0em -0.7em;
+  margin: 0em 0em 0em -0.8em;
 
-  transform: rotate(6deg); /*anders*/
-  padding-left: none;
+  transform: rotate(-12deg); /*anders*/
+
+  box-shadow: inset -2.4em 0.3em 0.2em rgb(50 50 50);
 }
+section:nth-of-type(2) button>div:nth-of-type(4)>div:nth-of-type(1) div:nth-of-type(2), section:nth-of-type(2) button>div:nth-of-type(4)>div:nth-of-type(3) div:nth-of-type(2){ /*handje links en rechts*/
+  width: 1.5em;
+  height: 1.2em;
+
+  border-top: 0.4em solid var(--lego-yellow);
+  border-left: 0.4em solid var(--lego-yellow);
+  border-right: 0.4em solid var(--lego-yellow);
+  border-radius: 10em;
+
+  transform: rotate(10deg);
+  margin: 0.1em -0.1em 0em 0em;
+
+  box-shadow:  inset 0.3em 0.08em 0.4em rgba(114 114 114 / 0.522);
+}
+section:nth-of-type(2) button>div:nth-of-type(4)>div:nth-of-type(3) div:nth-of-type(2) { /*handje rechts*/
+  margin-right: 0;
+  margin-left: -0.4em;
+
+  transform: rotate(-10deg);
+  margin: 0.1em 0em 0em -0.1em;
+}
+
+section:nth-of-type(2) button>div:nth-of-type(5) { /*riem*/
+  background-color: var(--lego-black);
+
+  border-top: 0.3em solid var(--lego-black);
+
+  aspect-ratio: 6 / 1;
+  width: 5em;
+  margin-top: -0.3em;
+
+  box-shadow: inset 0.3em 0.2em 0.3em rgb(50 50 50);
+}
+
+section:nth-of-type(2) button>div:nth-of-type(6) { /*benen*/
+  border-top: 1em solid var(--lego-black);
+
+  margin-top: 0em;
+
+  box-shadow: inset 0.3em 0.2em 0.3em rgb(50 50 50);
+
+  width: 5em;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+section:nth-of-type(2) button>div:nth-of-type(6) div:first-of-type, section:nth-of-type(2) button>div:nth-of-type(6) div:nth-of-type(2) {
+  background-color: var(--lego-black);
+
+  width: 2.3em;
+  height: 3em;
+
+  border-bottom: 0.8em solid rgb(34 34 34);
+
+  box-shadow: inset 0.3em 0.2em 0.3em rgb(50 50 50);
+}
+
+
 /********************/
 /****ANIMATIES******/
 /********************/
@@ -500,10 +598,5 @@ section:nth-of-type(2) button>div:nth-of-type(4)>div:nth-of-type(3) div:first-of
 
     clip-path: polygon(45% 0, 0 0, 0 100%, 42% 100%, 47% 90%, 57% 90%, 52% 100%, 100% 100%, 100% 0, 55% 0, 55% 4%, 45% 4%);
   }
-}
-
-@media (min-width:32em) {
-  body {height: 100vh;}
-  
 }
 /* ... */
