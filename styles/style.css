@@ -38,13 +38,15 @@ button:not([disabled]) {
 :root {
   --color-text: rgb(255 255 255);
   --lego-black: rgb(21 21 21);
-  --lego-red: rgb(214 0 38);
   --lego-white: rgb(255 255 244);
+  --lego-titanium: rgb(66 66 62);
+  --lego-red: rgb(214 0 38);
   --lego-yellow: rgb(247 209 18);
   --lego-green: rgb(0 168 79);
   --lego-dark-green: rgb(1 120 59);
   --red-brick-shadow: rgba(85 1 1 / 0.3);
   --lego-royal-blue: rgb(120 191 234);
+  --lego-bright-blue: rgb(0 100 183);
   --lego-brown: rgb(105 46 20);
   --lego-silver: rgb(135 141 143);
 }
@@ -206,7 +208,8 @@ ul:first-of-type li {
   place-content:center;
 }
 
-ul:first-of-type li:hover {
+ul:first-of-type li:hover, 
+ul:first-of-type li.change {
   --lego-red: var(--lego-yellow);
   --nop-dark: rgb(203, 169, 0);
 }
@@ -296,7 +299,8 @@ main section:first-of-type {
 /* hele poppetje */
 main section:nth-of-type(1) > button,
 main section:nth-of-type(2) > button,
-main section:nth-of-type(3) > button {
+main section:nth-of-type(3) > button,
+main section:nth-of-type(4) > button {
   /* een halve rode steen */
   width:12.5em;
   padding:0;
@@ -332,7 +336,8 @@ section:nth-of-type(2) button>div:first-of-type {
 /* hoofd */
 section:first-of-type button div:nth-of-type(2),
 section:nth-of-type(2) button>div:nth-of-type(2),
-section:nth-of-type(3) button>div:nth-of-type(2){
+section:nth-of-type(3) button>div:nth-of-type(2),
+section:nth-of-type(4) button>div:nth-of-type(2) {
   width: 4.5em;
   aspect-ratio: 1 / 1;
   margin-top: -1.8em;
@@ -484,15 +489,18 @@ section:nth-of-type(2) button>div:first-of-type {
 
 /* gezicht */
 section:nth-of-type(2) button>div:nth-of-type(2),
-section:nth-of-type(3) button>div:nth-of-type(2) {
+section:nth-of-type(3) button>div:nth-of-type(2),
+section:nth-of-type(4) button>div:nth-of-type(2) {
   display: flex;
   justify-content: center;
 }
 
 /* ogen */
-section:nth-of-type(2) button>div:nth-of-type(2) div:nth-of-type(1),
+section:nth-of-type(2) button>div:nth-of-type(2) div:first-of-type,
 section:nth-of-type(2) button>div:nth-of-type(2) div:nth-of-type(3),
-section:nth-of-type(3) button>div:nth-of-type(2) div:nth-of-type(2) {
+section:nth-of-type(3) button>div:nth-of-type(2) div:nth-of-type(2),
+section:nth-of-type(4) button>div:nth-of-type(2) div:first-of-type,
+section:nth-of-type(4) button>div:nth-of-type(2) div:nth-of-type(3) {
   width: 0.6em;
   height: 0.6em;
   margin: 2.2em 0em 0em 0em;
@@ -503,7 +511,8 @@ section:nth-of-type(3) button>div:nth-of-type(2) div:nth-of-type(2) {
 
 /* mond */
 section:nth-of-type(2) button>div:nth-of-type(2) div:nth-of-type(2),
-section:nth-of-type(3) button>div:nth-of-type(2) div:nth-of-type(3) {
+section:nth-of-type(3) button>div:nth-of-type(2) div:nth-of-type(3),
+section:nth-of-type(4) button>div:nth-of-type(2) div:nth-of-type(2) {
   width: 1.1em;
   height: 0.9em;
   margin: 2.8em 0em 0em 0em;
@@ -706,6 +715,11 @@ section:nth-of-type(2) article {
   clip-path: none
 }
 
+
+
+
+
+
 /***************/
 /*lego poppetje 3*/
 /***************/
@@ -760,21 +774,26 @@ section:nth-of-type(3) button>div:nth-of-type(2) div:nth-of-type(5) {
   clip-path: polygon(0 0, 45% 50%, 100% 50%, 100% 35%, 54% 35%, 21% 0);
 }
 
+/*snor*/
 section:nth-of-type(3) button>div:nth-of-type(2) div:nth-of-type(6) {
   position: absolute;
   width: 1em;
   height: 1em;
   margin: 3.1em 2.5em 0em 0em;
 }
+
 section:nth-of-type(3) button>div:nth-of-type(2) div:nth-of-type(6) img {
   width: 3.2em;
 }
+
+/*baard*/
 section:nth-of-type(3) button>div:nth-of-type(2) div:nth-of-type(7) {
   position: absolute;
   width: 1em;
   height: 1em;
   margin: 3em 3.2em 0em 0em;
 }
+
 section:nth-of-type(3) button>div:nth-of-type(2) div:nth-of-type(7) img {
   width: 4.2em;
   height: 1.5em;
@@ -785,8 +804,8 @@ section:nth-of-type(3) button>div:nth-of-type(4) {
   width: 7.5em;
   height: 5em;
 
-  background: repeating-linear-gradient(90deg, black, black 0.1em, var(--lego-brown) 0em, brown 0.5em );
-  border-top: 0.2em solid black;
+  background: repeating-linear-gradient(90deg, var(--lego-black), black 0.1em, var(--lego-brown) 0em, brown 0.5em );
+  border-top: 0.2em solid var(--lego-black);
 
   clip-path: polygon(0 25%, 22% 21%, 22% 8%, 78% 8%, 78% 21%, 100% 25%, 100% 0, 0 0);
 
@@ -808,9 +827,10 @@ section:nth-of-type(3) button>div:nth-of-type(5)>div:nth-of-type(3) div:nth-of-t
   border: 0.4em solid var(--lego-silver);
   border-left: none;
   border-radius: 3em;
-
   
   margin: 0em 0em -0.3em 0.1em;
+
+  box-shadow: inset 0em 0.15em 0.3em var(--lego-black);
 }
 
 /*riem sticker*/
@@ -831,9 +851,100 @@ section:nth-of-type(3) button>div:nth-of-type(7) div:first-of-type {
 
   border-bottom: 0.9em solid var(--lego-brown);
 
-  box-shadow: inset 0.5em 0.4em 0.8em rgb(33, 33, 33);
+  box-shadow: inset 0.5em 0.4em 0.8em rgb(33 33 33);
 }
 
+
+
+
+/***************/
+/*lego poppetje 4*/
+/***************/
+
+/* popje + blokje container */
+section:nth-of-type(4) {
+  left: 160.5em;
+  bottom: 16em;
+}
+
+/*hele hoed*/
+section:nth-of-type(4) button>div:first-of-type {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* hoed punt */
+section:nth-of-type(4) button>div:first-of-type>div:first-of-type{
+  background-color: var(--lego-bright-blue);
+
+  box-shadow: inset 0.5em -0.4em 2em var(--lego-titanium);
+
+  width: 5.5em;
+  aspect-ratio: 3 / 4;
+
+  clip-path: polygon(0 100%, 0 90%, 5% 88%, 39% 3%, 50% 0, 61% 3%, 95% 88%, 100% 90%, 100% 100%);
+
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+/* hoed punt clip*/
+section:nth-of-type(4) button>div:first-of-type div:first-of-type div{
+  background-color: var(--lego-bright-blue);
+
+  box-shadow: inset 0.05em 0.02em 0.2em var(--lego-white);
+
+  width: 5.5em;
+  height: 0.75em;
+
+  border-left: 2.3em solid var(--lego-bright-blue);
+  border-right: 2.3em solid var(--lego-bright-blue);
+}
+
+/* hoed rand */
+section:nth-of-type(4) button>div:first-of-type div:nth-of-type(2) {
+  background-color: var(--lego-bright-blue);
+
+  box-shadow: inset 0.2em 0.05em 0.5em var(--lego-titanium);
+
+  z-index: 1;
+  width: 8em;
+  aspect-ratio: 8 / 1;
+
+  border-radius: 5em;
+}
+
+/*bakkenbaarden*/
+section:nth-of-type(4) button>div:nth-of-type(2) div:nth-of-type(4) {
+  position: absolute;
+
+  background: repeating-linear-gradient(90deg, var(--lego-white), rgb(211, 211, 211) 0.2em, var(--lego-white) 0.3em, var(--lego-white) 0.3em );
+
+  width: 5.5em;
+  height: 2.8em;
+  
+  margin-top: 2em;
+
+  clip-path: polygon(6% 5%, 10% 0, 15% 0, 17% 6%, 17% 54%, 19% 61%, 81% 61%, 83% 54%, 83% 6%, 85% 0, 90% 0, 94% 5%, 97% 76%, 50% 100%, 4% 76%);
+}
+
+/*baard*/
+section:nth-of-type(4) button>div:nth-of-type(2) div:nth-of-type(5) {
+  position: absolute;
+  background-color: var(--lego-white);
+  background: radial-gradient(ellipse at bottom, rgba(255,255,255,1) 35%,rgba(0,0,0,1) 36%,rgba(255,255,255,1) 37%,rgba(255,255,255,1) 37%,rgba(255,255,255,1) 61%,rgba(0,0,0,1) 62%,rgba(0,0,0,1) 62%,rgba(255,255,255,1) 63%,rgba(255,255,255,1) 63%,rgba(255,255,255,1) 83%,rgba(255,255,255,1) 84%,rgba(0,0,0,1) 85%,rgba(255,255,255,1) 87%,rgba(255,255,255,1) 95%,rgba(0,0,0,1) 99%);
+
+  width: 4em;
+  height: 6em;
+
+  margin-top: 3.1em;
+
+  border-radius: 1em;
+
+  clip-path: polygon(14% 0, 39% 0, 50% 1%, 61% 0, 86% 0, 100% 7%, 100% 24%, 97% 39%, 90% 40%, 96% 60%, 82% 62%, 87% 73%, 100% 94%, 100% 100%, 70% 100%, 60% 95%, 50% 90%, 40% 95%, 30% 100%, 0 100%, 0 94%, 13% 73%, 18% 62%, 4% 60%, 10% 40%, 3% 39%, 0 25%, 0 7%);
+}
 /********************/
 /****ANIMATIES******/
 /********************/
@@ -873,6 +984,7 @@ section:nth-of-type(3) button>div:nth-of-type(7) div:first-of-type {
     border: inset 2.5em;
     border-top: inset 1em;
     border-right: inset 2em;
+
     border-color: var(--lego-dark-green);
     border-left-color: var(--lego-green);
     border-top-color: var(--lego-green);
@@ -887,7 +999,8 @@ section:nth-of-type(3) button>div:nth-of-type(7) div:first-of-type {
 
 /*darkmode*/
 @media (prefers-color-scheme: dark) {
-
+  
+  /*verander cursor*/
   *, *::after, *::before {
     cursor: url('../images/cursorwhite.svg'), auto;
   }
@@ -895,7 +1008,6 @@ section:nth-of-type(3) button>div:nth-of-type(7) div:first-of-type {
   /*Verander achtegrond*/
   main {
     background-image: url("../images/legoblueprint.jpeg");
-    /* background-blend-mode: darken; */
   }
   header {
     background-color: rgb(18 18 36);

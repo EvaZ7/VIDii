@@ -168,8 +168,8 @@ Nb. Wees specifiek ('css-tricks' als bron is bijv. niet specifiek genoeg).
 
 1. Fonts, 1. (z.d.). Fredoka Font Family Â·. 1001 Fonts. Geraadpleegd op 1 november 2022, van https://www.1001fonts.com/fredoka-one-font.html 
 2. Ingthorsson, S. (z.d.). CSS DOuble Text Stroke. codepen. Geraadpleegd op 1 november 2022, van https://codepen.io/ingthorsson/pen/QVRVZP?editors=1100
-3. 
-4. Icons. (z.d.). Skull crossbones Icons Download for Free in PNG and SVG. Geraadpleegd op 8 november 2022, van https://icons8.com/icons/set/skull-crossbones
+3. Icons. (z.d.). Skull crossbones Icons Download for Free in PNG and SVG. Geraadpleegd op 8 november 2022, van https://icons8.com/icons/set/skull-crossbones
+4. Crawforty. (z.d.). LEGO Captain Redbeard Minifigure. Geraadpleegd op 8 november 2022, van https://www.crawforty.xyz/ProductDetail.aspx?iid=171370287&pr=42.88
 
 https://www.sinds1971.nl/cssvoordedames/8-animations.html
 http://www.jennyscrayoncollection.com/2021/06/all-current-lego-colors.html
