@@ -1,8 +1,8 @@
 /*importeren custom lego font*/
 @font-face {
   font-family: 'fredoka';
-  src: url('/assets/fonts/fredoka-webfont.woff2') format('woff2'),
-       url('/assets/fonts/fredoka-webfont.woff') format('woff');
+  src: url('../assets/fonts/fredoka-webfont.woff2') format('woff2'),
+       url('../assets/fonts/fredoka-webfont.woff') format('woff');
   font-weight: bold;
   font-style: normal;
 
@@ -40,15 +40,24 @@ button:not([disabled]) {
   --lego-black: rgb(21 21 21);
   --lego-white: rgb(255 255 244);
   --lego-titanium: rgb(66 66 62);
+
   --lego-red: rgb(214 0 38);
+  --red-brick-shadow: rgba(85 1 1 / 0.3);
+
   --lego-yellow: rgb(247 209 18);
+  --lego-dark-yellow: rgb(141 120 1);
+  --lego-brick-yellow: rgb(221 196 142);
+
   --lego-green: rgb(0 168 79);
   --lego-dark-green: rgb(1 120 59);
-  --red-brick-shadow: rgba(85 1 1 / 0.3);
+  --lego-yoda-green: rgb(111 148 122);
+
   --lego-royal-blue: rgb(120 191 234);
   --lego-bright-blue: rgb(0 100 183);
   --lego-brown: rgb(105 46 20);
+  --lego-light-brown: rgb(165 42 42);
   --lego-silver: rgb(135 141 143);
+  --lego-light-gray: rgb(211 211 211);
 }
 
 
@@ -140,7 +149,7 @@ h1 {
   font-style: italic;
   text-transform: uppercase;
   text-align: center;
-  -webkit-text-stroke: 0.15em rgb(255 255 0); 
+  -webkit-text-stroke: 0.15em var(--lego-yellow); 
 }
 
 h1:before {
@@ -198,6 +207,7 @@ ul:first-of-type {
   grid-template-rows: repeat(5, 4em);
 }
 
+/* nopjes */
 ul:first-of-type li {
   --nop-dark: rgb(154 0 29);
   position: relative;
@@ -211,10 +221,10 @@ ul:first-of-type li {
 ul:first-of-type li:hover, 
 ul:first-of-type li.change {
   --lego-red: var(--lego-yellow);
-  --nop-dark: rgb(203, 169, 0);
+  --nop-dark: var(--lego-dark-yellow);
 }
 
-/*nopjes*/
+/* blokjes nopjes */
 ul:first-of-type li:nth-of-type(1)::before, 
 ul:first-of-type li:nth-of-type(2)::before, 
 ul:first-of-type li:nth-of-type(3)::before, 
@@ -300,7 +310,8 @@ main section:first-of-type {
 main section:nth-of-type(1) > button,
 main section:nth-of-type(2) > button,
 main section:nth-of-type(3) > button,
-main section:nth-of-type(4) > button {
+main section:nth-of-type(4) > button,
+main section:nth-of-type(5) > button {
   /* een halve rode steen */
   width:12.5em;
   padding:0;
@@ -328,7 +339,7 @@ section:nth-of-type(2) button>div:first-of-type {
   border-top: 0.25em solid var(--lego-white);
   border-bottom: 0.5em solid var(--lego-white);
   border-radius: 0.6em 0.6em 0em 0em;
-  box-shadow: inset 0.1em 0.15em 0.45em rgb(171 171 171);
+  box-shadow: inset 0.1em 0.15em 0.45em var(--lego-light-gray);
 
   clip-path: polygon(0 0%, 100% 0%, 93% 61%, 100% 100%, 0 100%, 6% 61%);
 }
@@ -344,18 +355,19 @@ section:nth-of-type(4) button>div:nth-of-type(2) {
 
   background-color: var(--lego-yellow);
   border-radius: 1em;
-  box-shadow: inset 0.1em 0.5em 0.8em rgb(120 116 33);
+  box-shadow: inset 0.1em 0.5em 0.5em 0.15em var(--lego-dark-yellow);
 }
 
 /* nek */
 section:first-of-type button div:nth-of-type(3),
 section:nth-of-type(2) button>div:nth-of-type(3),
-section:nth-of-type(3) button>div:nth-of-type(3) {
+section:nth-of-type(3) button>div:nth-of-type(3),
+section:nth-of-type(4) button>div:nth-of-type(3) {
   width: 2.8em;
   aspect-ratio: 5 / 1;
   
   background-color: var(--lego-yellow);
-  box-shadow: inset 0em 0.1em 0.2em rgb(80 75 0);
+  box-shadow: inset 0em 0.1em 0.2em var(--lego-dark-yellow);
 }
 
 /* torso */
@@ -363,11 +375,11 @@ section:first-of-type button div:nth-of-type(4) {
   width: 6em;
   aspect-ratio: 4/3;
 
-  background-color: rgb(0 0 0);
+  background-color: var(--lego-black);
   border-radius: 0.8em 0.8em 0em 0em;
-  border-right: 0.4em solid rgba(61 61 61 / 0.58);
-  border-left: 0.4em solid rgba(61 61 61 / 0.58);
-  box-shadow: inset 0.2em 0.3em 0.8em rgba(114 114 114 / 0.522);
+  border-right: 0.4em solid var(--lego-titanium);
+  border-left: 0.4em solid var(--lego-titanium);
+  box-shadow: inset 0.2em 0.3em 0.8em var(--lego-titanium);
 
   clip-path: polygon(0 0, 100% 0, 94% 62%, 100% 100%, 0 100%, 6% 62%);
 }
@@ -378,7 +390,7 @@ section:first-of-type button div:nth-of-type(5) {
   aspect-ratio: 5 / 1;
   
   background-color: var(--lego-white);
-  box-shadow: inset 0.3em 0.2em 0.3em rgb(171 171 171);
+  box-shadow: inset 0.3em 0.2em 0.3em var(--lego-light-gray);
 }
 
 /* benen */
@@ -386,8 +398,8 @@ section:first-of-type button div:nth-of-type(6) {
   width: 6em;
   aspect-ratio: 4/3;
 
-  background-color: rgb(0 0 0);
-  box-shadow: inset 0.5em 0.3em 0.5em rgba(114 114 114 / 0.522);
+  background-color: var(--lego-black);
+  box-shadow: inset 0.5em 0.3em 0.5em var(--lego-titanium);
   
   clip-path: polygon(0 0, 100% 0, 88% 100%, 12% 100%);
 }
@@ -397,8 +409,8 @@ section:first-of-type button div:nth-of-type(7) {
   width: 6em;
   aspect-ratio: 5 / 1;
   
-  background-color: rgb(0 0 0);
-  box-shadow: inset 0.1em 0.08em 0.4em rgba(114 114 114 / 0.522);
+  background-color: var(--lego-black);
+  box-shadow: inset 0.1em 0.08em 0.4em var(--lego-titanium);
 }
 
 /* torso, benen en voeten */
@@ -427,6 +439,7 @@ section:first-of-type> button:focus{
 /***************/
 /*lego blokje 1*/
 /***************/
+
 section:first-of-type article,
 section:nth-of-type(2) article {
   position: absolute;
@@ -450,7 +463,7 @@ section:nth-of-type(2) article {
   border-color: var(--lego-dark-green);
   border-left-color: var(--lego-green);
   border-top-color: var(--lego-green);
-  /* outline: 0.5em solid var(--lego-green); */
+
   box-shadow: inset 0.5em 0.5em 1em 0.5em var(--lego-dark-green);
 
   clip-path: polygon(45% 0, 0 0, 0 100%, 42% 100%, 47% 93%, 57% 93%, 52% 100%, 100% 100%, 100% 0, 55% 0, 55% 4%, 45% 4%);
@@ -484,7 +497,7 @@ section:nth-of-type(2) button>div:first-of-type {
   background-color: var(--lego-black);
   border-top: 0.25em solid var(--lego-black);
   border-bottom: 0.5em solid var(--lego-black);
-  box-shadow: inset 0.1em 0.15em 0.45em rgb(171 171 171);
+  box-shadow: inset 0.5em 0.3em 0.45em var(--lego-titanium);
 }
 
 /* gezicht */
@@ -521,15 +534,19 @@ section:nth-of-type(4) button>div:nth-of-type(2) div:nth-of-type(2) {
   border-radius: 1.4em;
 }
 
-/*armen en torso*/
+/* armen en torso */
 section:nth-of-type(2) button>div:nth-of-type(4),
-section:nth-of-type(3) button>div:nth-of-type(5) { 
+section:nth-of-type(3) button>div:nth-of-type(5),
+section:nth-of-type(4) button>div:nth-of-type(4),
+section:nth-of-type(5) button>div:nth-of-type(2) { 
   display: flex;
 }
 
-/*torso*/
+/* torso */
 section:nth-of-type(2) button>div:nth-of-type(4)>div:nth-of-type(2),
-section:nth-of-type(3) button>div:nth-of-type(5)>div:nth-of-type(2) { 
+section:nth-of-type(3) button>div:nth-of-type(5)>div:nth-of-type(2),
+section:nth-of-type(4) button>div:nth-of-type(4)>div:nth-of-type(2),
+section:nth-of-type(5) button>div:nth-of-type(2)>div:nth-of-type(2) { 
   width: 6em;
   height: 5em;
   
@@ -537,7 +554,7 @@ section:nth-of-type(3) button>div:nth-of-type(5)>div:nth-of-type(2) {
 
   clip-path: polygon(15% 0, 85% 0, 100% 100%, 0% 100%);
 
-  box-shadow: inset 0.6em 0.3em 0.5em rgb(50 50 50);
+  box-shadow: inset 0.6em 0.3em 0.5em var(--lego-titanium);
 
   z-index: 1;
 
@@ -547,7 +564,7 @@ section:nth-of-type(3) button>div:nth-of-type(5)>div:nth-of-type(2) {
   justify-content: space-evenly;
 }
 
-/*knoopjes*/
+/* knoopjes */
 section:nth-of-type(2) button>div:nth-of-type(4)>div:nth-of-type(2) div { 
   background-color: var(--lego-white);
 
@@ -556,7 +573,7 @@ section:nth-of-type(2) button>div:nth-of-type(4)>div:nth-of-type(2) div {
   aspect-ratio: 1 / 1;
 }
 
-/*badge*/
+/* badge */
 section:nth-of-type(2) button>div:nth-of-type(4)>div:nth-of-type(2) div:first-of-type { 
   background-color: var(--lego-white);
 
@@ -572,25 +589,33 @@ section:nth-of-type(2) button>div:nth-of-type(4)>div:nth-of-type(2) div:first-of
   aspect-ratio: 1 / 1;
 }
 
-/*arm en hand*/
+/* arm en hand */
 section:nth-of-type(2) button>div:nth-of-type(4)>div:nth-of-type(1),
 section:nth-of-type(2) button>div:nth-of-type(4)>div:nth-of-type(3),
 section:nth-of-type(3) button>div:nth-of-type(5)>div:nth-of-type(1),
-section:nth-of-type(3) button>div:nth-of-type(5)>div:nth-of-type(3) { 
+section:nth-of-type(3) button>div:nth-of-type(5)>div:nth-of-type(3),
+section:nth-of-type(4) button>div:nth-of-type(4)>div:nth-of-type(1),
+section:nth-of-type(4) button>div:nth-of-type(4)>div:nth-of-type(3),
+section:nth-of-type(5) button>div:nth-of-type(2)>div:nth-of-type(1),
+section:nth-of-type(5) button>div:nth-of-type(2)>div:nth-of-type(3) { 
   display: flex;
   flex-direction: column;
   align-items: flex-end;
 }
 
- /*arm en hand rechts*/
+ /* arm en hand rechts */
 section:nth-of-type(2) button>div:nth-of-type(4)>div:nth-of-type(3),
-section:nth-of-type(3) button>div:nth-of-type(5)>div:nth-of-type(3) {
+section:nth-of-type(3) button>div:nth-of-type(5)>div:nth-of-type(3),
+section:nth-of-type(4) button>div:nth-of-type(4)>div:nth-of-type(3),
+section:nth-of-type(5) button>div:nth-of-type(2)>div:nth-of-type(3) {
   align-items: flex-start;
 }
 
-/*arm links*/
+/* arm links */
 section:nth-of-type(2) button>div:nth-of-type(4)>div:nth-of-type(1) div:first-of-type, 
-section:nth-of-type(3) button>div:nth-of-type(5)>div:nth-of-type(1) div:first-of-type { 
+section:nth-of-type(3) button>div:nth-of-type(5)>div:nth-of-type(1) div:first-of-type,
+section:nth-of-type(4) button>div:nth-of-type(4)>div:nth-of-type(1) div:first-of-type,
+section:nth-of-type(5) button>div:nth-of-type(2)>div:nth-of-type(1) div:first-of-type { 
   width: 4em;
   height: 3.5em;
   margin: 0em -0.7em 0em 0em;
@@ -601,14 +626,17 @@ section:nth-of-type(3) button>div:nth-of-type(5)>div:nth-of-type(1) div:first-of
 
   transform: rotate(12deg);
 
-  box-shadow: inset 2.7em 0.5em 0.2em rgb(50 50 50);
+  box-shadow: inset 2.6em 0.5em 0.8em 0.1em var(--lego-titanium);
 }
 
-/*handje links en rechts*/
+/* handje links en rechts */
 section:nth-of-type(2) button>div:nth-of-type(4)>div:nth-of-type(1) div:nth-of-type(2),
 section:nth-of-type(2) button>div:nth-of-type(4)>div:nth-of-type(3) div:nth-of-type(2),
-section:nth-of-type(3) button>div:nth-of-type(5)>div:nth-of-type(1) div:nth-of-type(2) { 
-  /* background-color: var(--lego-yellow); */
+section:nth-of-type(3) button>div:nth-of-type(5)>div:nth-of-type(1) div:nth-of-type(2),
+section:nth-of-type(4) button>div:nth-of-type(4)>div:nth-of-type(1) div:nth-of-type(2),
+section:nth-of-type(4) button>div:nth-of-type(4)>div:nth-of-type(3) div:nth-of-type(2),
+section:nth-of-type(5) button>div:nth-of-type(2)>div:nth-of-type(1) div:nth-of-type(2),
+section:nth-of-type(5) button>div:nth-of-type(2)>div:nth-of-type(3) div:nth-of-type(2) { 
   width: 1.8em;
   height: 1.3em;
   margin-right: -0.2em;
@@ -619,13 +647,15 @@ section:nth-of-type(3) button>div:nth-of-type(5)>div:nth-of-type(1) div:nth-of-t
   border-right: 0.5em solid var(--lego-yellow);
   border-radius: 10em;
 
-  box-shadow:  inset 0.3em 0.08em 0.4em rgba(114 114 114 / 0.522);
+  box-shadow:  inset 0.3em 0.08em 0.4em var(--lego-silver);
   transform: rotate(10deg);
 }
 
-/*arm rechts*/
+/* arm rechts */
 section:nth-of-type(2) button>div:nth-of-type(4)>div:nth-of-type(3) div:first-of-type, 
-section:nth-of-type(3) button>div:nth-of-type(5)>div:nth-of-type(3) div:first-of-type { 
+section:nth-of-type(3) button>div:nth-of-type(5)>div:nth-of-type(3) div:first-of-type,
+section:nth-of-type(4) button>div:nth-of-type(4)>div:nth-of-type(3) div:first-of-type,
+section:nth-of-type(5) button>div:nth-of-type(2)>div:nth-of-type(3) div:first-of-type { 
   background-color: var(--lego-black);
 
   clip-path: polygon(0% 0%, 20% 3%, 28% 10%, 47% 47%, 40% 100%, 7% 100%, 10% 57%, 0% 23%);
@@ -637,11 +667,12 @@ section:nth-of-type(3) button>div:nth-of-type(5)>div:nth-of-type(3) div:first-of
 
   transform: rotate(-12deg); /*anders*/
 
-  box-shadow: inset -2.4em 0.3em 0.2em rgb(50 50 50);
+  box-shadow: inset -2.2em 0.3em 0.7em 0.1em var(--lego-titanium);
 }
 
-/*handje rechts*/
-section:nth-of-type(2) button>div:nth-of-type(4)>div:nth-of-type(3) div:nth-of-type(2) { 
+/* handje rechts */
+section:nth-of-type(2) button>div:nth-of-type(4)>div:nth-of-type(3) div:nth-of-type(2),
+section:nth-of-type(4) button>div:nth-of-type(4)>div:nth-of-type(3) div:nth-of-type(2) { 
   margin-top: 0.1em;
   margin-left: -0.2em;
 
@@ -649,9 +680,10 @@ section:nth-of-type(2) button>div:nth-of-type(4)>div:nth-of-type(3) div:nth-of-t
   margin: 0.1em 0em -2em -0.1em;
 }
 
-/*riem*/
+/* riem */
 section:nth-of-type(2) button>div:nth-of-type(5),
-section:nth-of-type(3) button>div:nth-of-type(6) { 
+section:nth-of-type(3) button>div:nth-of-type(6),
+section:nth-of-type(4) button>div:nth-of-type(5) { 
   background-color: var(--lego-black);
 
   border-top: 0.3em solid var(--lego-black);
@@ -659,17 +691,17 @@ section:nth-of-type(3) button>div:nth-of-type(6) {
   aspect-ratio: 6 / 1;
   width: 6em;
 
-  box-shadow: inset 0.3em 0.2em 0.3em rgb(50 50 50);
+  box-shadow: inset 0.3em 0.2em 0.3em var(--lego-titanium);
 }
 
-/*benen*/
+/* benen */
 section:nth-of-type(2) button>div:nth-of-type(6),
-section:nth-of-type(3) button>div:nth-of-type(7) { 
+section:nth-of-type(3) button>div:nth-of-type(7),
+section:nth-of-type(4) button>div:nth-of-type(6),
+section:nth-of-type(5) button>div:nth-of-type(3) { 
   border-top: 1.5em solid var(--lego-black);
 
   margin-top: 0em;
-
-  /* box-shadow: inset 0.3em 0.2em 0.3em rgb(50 50 50); */
 
   width: 6em;
 
@@ -678,18 +710,20 @@ section:nth-of-type(3) button>div:nth-of-type(7) {
   justify-content: space-between;
 }
 
-/*1 been*/
+/* 1 been */
 section:nth-of-type(2) button>div:nth-of-type(6) div:first-of-type, 
 section:nth-of-type(2) button>div:nth-of-type(6) div:nth-of-type(2),
-section:nth-of-type(3) button>div:nth-of-type(7) div:nth-of-type(2) {
+section:nth-of-type(3) button>div:nth-of-type(7) div:nth-of-type(2),
+section:nth-of-type(4) button>div:nth-of-type(6) div:first-of-type,
+section:nth-of-type(4) button>div:nth-of-type(6) div:nth-of-type(2) {
   background-color: var(--lego-black);
 
   width: 2.8em;
   height: 3.8em;
 
-  border-bottom: 0.8em solid rgb(34 34 34);
+  border-bottom: 0.8em solid var(--lego-black);
 
-  box-shadow: inset 0.3em 0.2em 0.3em rgb(50 50 50);
+  box-shadow: inset 0.3em 0.05em 0.3em var(--lego-titanium);
 }
 
 
@@ -740,10 +774,10 @@ section:nth-of-type(3) button>div:first-of-type {
 
   clip-path: polygon(0 100%, 0 90%, 20% 80%, 32% 56%, 50% 50%, 69% 56%, 80% 81%, 100% 90%, 100% 100%);
 
-  box-shadow: inset 0.1em 0.15em 0.45em rgb(171 171 171);
+  box-shadow: inset 0.1em 0.15em 0.45em var(--lego-silver);
 }
 
-/* pet skull*/
+/* pet skull */
 section:nth-of-type(3) button>div:first-of-type img {
   width: 3em;
   aspect-ratio: 1/1;
@@ -751,7 +785,7 @@ section:nth-of-type(3) button>div:first-of-type img {
   margin-top: 5.5em;
 }
 
-/*oog-lapje lapje*/
+/* oog-lapje lapje */
 section:nth-of-type(3) button>div:nth-of-type(2) div:nth-of-type(4) {
   width: 1.1em;
   height: 0.9em;
@@ -762,7 +796,7 @@ section:nth-of-type(3) button>div:nth-of-type(2) div:nth-of-type(4) {
   background-color: var(--lego-black);
 }
 
-/*oog-lapje touw*/
+/* oog-lapje touw */
 section:nth-of-type(3) button>div:nth-of-type(2) div:nth-of-type(5) {
   position: absolute;
   width: 3em;
@@ -774,7 +808,7 @@ section:nth-of-type(3) button>div:nth-of-type(2) div:nth-of-type(5) {
   clip-path: polygon(0 0, 45% 50%, 100% 50%, 100% 35%, 54% 35%, 21% 0);
 }
 
-/*snor*/
+/* snor */
 section:nth-of-type(3) button>div:nth-of-type(2) div:nth-of-type(6) {
   position: absolute;
   width: 1em;
@@ -786,7 +820,7 @@ section:nth-of-type(3) button>div:nth-of-type(2) div:nth-of-type(6) img {
   width: 3.2em;
 }
 
-/*baard*/
+/* baard */
 section:nth-of-type(3) button>div:nth-of-type(2) div:nth-of-type(7) {
   position: absolute;
   width: 1em;
@@ -799,12 +833,12 @@ section:nth-of-type(3) button>div:nth-of-type(2) div:nth-of-type(7) img {
   height: 1.5em;
 }
 
-/*schouder koortjes*/
+/* schouder koortjes */
 section:nth-of-type(3) button>div:nth-of-type(4) {
   width: 7.5em;
   height: 5em;
 
-  background: repeating-linear-gradient(90deg, var(--lego-black), black 0.1em, var(--lego-brown) 0em, brown 0.5em );
+  background: repeating-linear-gradient(90deg, var(--lego-black), var(--lego-black) 0.1em, var(--lego-brown) 0em, var(--lego-light-brown) 0.5em );
   border-top: 0.2em solid var(--lego-black);
 
   clip-path: polygon(0 25%, 22% 21%, 22% 8%, 78% 8%, 78% 21%, 100% 25%, 100% 0, 0 0);
@@ -814,12 +848,12 @@ section:nth-of-type(3) button>div:nth-of-type(4) {
   margin-bottom: -5em;
 }
 
-/*torso sticker*/
+/* torso sticker */
 section:nth-of-type(3) button>div:nth-of-type(5)>div:nth-of-type(2) img {
   width: 5em;
 }
 
-/*handje rechts, haak*/
+/* handje rechts, haak */
 section:nth-of-type(3) button>div:nth-of-type(5)>div:nth-of-type(3) div:nth-of-type(2) { 
   width: 1.6em;
   height: 1.8em;
@@ -833,12 +867,12 @@ section:nth-of-type(3) button>div:nth-of-type(5)>div:nth-of-type(3) div:nth-of-t
   box-shadow: inset 0em 0.15em 0.3em var(--lego-black);
 }
 
-/*riem sticker*/
+/* riem sticker */
 section:nth-of-type(3) button>div:nth-of-type(6) img{
   width: 5.8em;
 }
 
-/*houten been*/
+/* houten been */
 section:nth-of-type(3) button>div:nth-of-type(7) div:first-of-type {
   background-color: var(--lego-brown);
 
@@ -851,7 +885,7 @@ section:nth-of-type(3) button>div:nth-of-type(7) div:first-of-type {
 
   border-bottom: 0.9em solid var(--lego-brown);
 
-  box-shadow: inset 0.5em 0.4em 0.8em rgb(33 33 33);
+  box-shadow: inset 0.5em 0.4em 0.8em var(--lego-titanium);
 }
 
 
@@ -863,11 +897,11 @@ section:nth-of-type(3) button>div:nth-of-type(7) div:first-of-type {
 
 /* popje + blokje container */
 section:nth-of-type(4) {
-  left: 160.5em;
+  left: 162.5em;
   bottom: 16em;
 }
 
-/*hele hoed*/
+/* hele hoed */
 section:nth-of-type(4) button>div:first-of-type {
   display: flex;
   flex-direction: column;
@@ -890,7 +924,7 @@ section:nth-of-type(4) button>div:first-of-type>div:first-of-type{
   align-items: flex-end;
 }
 
-/* hoed punt clip*/
+/* hoed punt clip */
 section:nth-of-type(4) button>div:first-of-type div:first-of-type div{
   background-color: var(--lego-bright-blue);
 
@@ -916,11 +950,11 @@ section:nth-of-type(4) button>div:first-of-type div:nth-of-type(2) {
   border-radius: 5em;
 }
 
-/*bakkenbaarden*/
+/* bakkenbaarden */
 section:nth-of-type(4) button>div:nth-of-type(2) div:nth-of-type(4) {
   position: absolute;
 
-  background: repeating-linear-gradient(90deg, var(--lego-white), rgb(211, 211, 211) 0.2em, var(--lego-white) 0.3em, var(--lego-white) 0.3em );
+  background: repeating-linear-gradient(90deg, var(--lego-white), var(--lego-light-gray) 0.2em, var(--lego-white) 0.3em, var(--lego-white) 0.3em );
 
   width: 5.5em;
   height: 2.8em;
@@ -930,21 +964,117 @@ section:nth-of-type(4) button>div:nth-of-type(2) div:nth-of-type(4) {
   clip-path: polygon(6% 5%, 10% 0, 15% 0, 17% 6%, 17% 54%, 19% 61%, 81% 61%, 83% 54%, 83% 6%, 85% 0, 90% 0, 94% 5%, 97% 76%, 50% 100%, 4% 76%);
 }
 
-/*baard*/
+/* baard */
 section:nth-of-type(4) button>div:nth-of-type(2) div:nth-of-type(5) {
   position: absolute;
   background-color: var(--lego-white);
-  background: radial-gradient(ellipse at bottom, rgba(255,255,255,1) 35%,rgba(0,0,0,1) 36%,rgba(255,255,255,1) 37%,rgba(255,255,255,1) 37%,rgba(255,255,255,1) 61%,rgba(0,0,0,1) 62%,rgba(0,0,0,1) 62%,rgba(255,255,255,1) 63%,rgba(255,255,255,1) 63%,rgba(255,255,255,1) 83%,rgba(255,255,255,1) 84%,rgba(0,0,0,1) 85%,rgba(255,255,255,1) 87%,rgba(255,255,255,1) 95%,rgba(0,0,0,1) 99%);
+  background: radial-gradient(ellipse at bottom, var(--lego-white) 0%, var(--lego-white) 31%, var(--lego-white) 35%, var(--lego-white) 42%, var(--lego-light-gray) 51%, var(--lego-white) 55%, var(--lego-white) 61%, var(--lego-light-gray) 69%, var(--lego-white) 73%, var(--lego-white) 100%);
 
   width: 4em;
   height: 6em;
 
   margin-top: 3.1em;
-
   border-radius: 1em;
+  z-index: 2;
 
   clip-path: polygon(14% 0, 39% 0, 50% 1%, 61% 0, 86% 0, 100% 7%, 100% 24%, 97% 39%, 90% 40%, 96% 60%, 82% 62%, 87% 73%, 100% 94%, 100% 100%, 70% 100%, 60% 95%, 50% 90%, 40% 95%, 30% 100%, 0 100%, 0 94%, 13% 73%, 18% 62%, 4% 60%, 10% 40%, 3% 39%, 0 25%, 0 7%);
 }
+
+/* torso */
+section:nth-of-type(4) button>div:nth-of-type(4)>div:nth-of-type(2) {
+  background-color: var(--lego-bright-blue);
+
+  box-shadow: inset 0.6em 0.3em 0.5em var(--lego-titanium);
+}
+
+/* arm links en rechts */
+section:nth-of-type(4) button>div:nth-of-type(4)>div:nth-of-type(1) div:first-of-type,
+section:nth-of-type(4) button>div:nth-of-type(4)>div:nth-of-type(3) div:first-of-type {
+  background-color: var(--lego-bright-blue);
+}
+
+/* riem en 1 been */
+section:nth-of-type(4) button>div:nth-of-type(6) div:first-of-type,
+section:nth-of-type(4) button>div:nth-of-type(6) div:nth-of-type(2) {
+  background-color: var(--lego-bright-blue);
+
+  border-color: var(--lego-bright-blue);
+}
+
+/* benen */
+section:nth-of-type(4) button>div:nth-of-type(6) {
+  border-color: var(--lego-bright-blue);
+}
+
+
+
+
+
+/***************/
+/*lego poppetje 5*/
+/***************/
+
+/* popje + blokje container */
+section:nth-of-type(5) {
+  left: 212.5em;
+  bottom: 20em;
+}
+
+/* hoofd */
+section:nth-of-type(5) button>div:first-of-type img {
+  width: 10em;
+
+  margin-bottom: -0.5em;
+}
+
+/* torso */
+section:nth-of-type(5) button>div:nth-of-type(2)>div:nth-of-type(2) {
+  background-color: var(--lego-brick-yellow);
+
+  box-shadow: inset 0.6em 0.3em 0.5em var(--lego-silver);
+}
+
+/* arm links */
+section:nth-of-type(5) button>div:nth-of-type(2)>div:nth-of-type(1) div:first-of-type {
+  background-color: var(--lego-brick-yellow);
+
+  box-shadow: inset 2.6em 0.5em 0.8em 0.1em var(--lego-silver);
+}
+
+/* arm rechts */
+section:nth-of-type(5) button>div:nth-of-type(2)>div:nth-of-type(3) div:first-of-type {
+  background-color: var(--lego-brick-yellow);
+
+  box-shadow: inset -2.2em 0.3em 0.7em 0.1em var(--lego-silver);
+}
+
+/* handjes */
+section:nth-of-type(5) button>div:nth-of-type(2)>div:nth-of-type(1) div:nth-of-type(2),
+section:nth-of-type(5) button>div:nth-of-type(2)>div:nth-of-type(3) div:nth-of-type(2) {
+  border-color: var(--lego-yoda-green);
+}
+
+/* benen */
+section:nth-of-type(5) button>div:nth-of-type(3) {
+  border-color: var(--lego-brick-yellow);
+
+  border-top: 1em solid var(--lego-brick-yellow);
+}
+
+/* 1 been */
+section:nth-of-type(5) button>div:nth-of-type(3) div:first-of-type,
+section:nth-of-type(5) button>div:nth-of-type(3) div:nth-of-type(2) {
+  background-color: var(--lego-brick-yellow);
+
+  width: 2.8em;
+  height: 2.6em;
+
+  border-bottom: 0.8em solid var(--lego-brick-yellow);
+
+  box-shadow: inset 0.3em 0.05em 0.3em var(--lego-silver);
+}
+
+
 /********************/
 /****ANIMATIES******/
 /********************/
