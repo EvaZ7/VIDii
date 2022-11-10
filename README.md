@@ -193,14 +193,6 @@ Nb. Wees specifiek ('css-tricks' als bron is bijv. niet specifiek genoeg).
 7. Crowther, J. (2022, 25 januari). All the Current LEGO Colors HEX and RGB Codes. Jenny’s Crayon Collection. http://www.jennyscrayoncollection.com/2021/06/all-current-lego-colors.html 
 8. The Brothers Brick. (2018, 31 augustus). LEGO Minifigure 40 Years Infographic. https://www.brothers-brick.com/2018/08/31/the-minifigure-turns-40-a-colorful-history/lego-minifigure-40-years-infographic/
 9. Quatrain, S. (2022, 10 november). A Short History of the LEGO Brick (1949-Today) PART ONE. http://snakeandboris.blogspot.com/2016/06/a-short-history-of-lego-brick-1949.html
+10. Lego brick Icons Download for Free in PNG and SVG. (z.d.). Geraadpleegd op 10 november 2022, van https://icons8.com/icons/set/lego-brick 
 
-https://icons8.com/icons/set/lego-brick
-https://gameofbricks.eu/blogs/news/the-first-lego-minifigure-history-of-the-lego-minifigure
-https://www.lego.com/nl-be/kids/characters/minifigures/police-officer-52ead080c2c645b29a37c209e369aef2
-https://www.brothers-brick.com/2018/08/31/the-minifigure-turns-40-a-colorful-history/lego-minifigure-40-years-infographic/
-
-img
-https://codemyui.com/lego-style-loading-animation/
-https://imgur.com/aRWUh5f 
-https://s3-us-west-2.amazonaws.com/media.brothers-brick.com/wp-content/uploads/2018/10/LEGO_WP_1920x1200_WHT.png 
 </details>

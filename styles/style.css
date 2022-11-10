@@ -21,7 +21,7 @@
 *, *::after, *::before {
   box-sizing: border-box;  
   cursor: pointer;
-  cursor: url('../images/cursorblack.svg'), auto;
+  cursor: url('../images/cursorblack.svg'), auto; /* (Lego brick Icons Download for Free in PNG and SVG, z.d.) */
 }
 
 button:not([disabled]) {
