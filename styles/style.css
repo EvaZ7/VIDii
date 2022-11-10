@@ -204,6 +204,13 @@ main {
   background-blend-mode: darken;
 }
 
+main.click {
+  background-color: none;
+  background-blend-mode: normal;
+  background-image: url("../images/lego.style.loading.animation.gif");
+  background-size: 30em 20em;
+}
+
 /*Lego trap*/
 /***********/
 ul:first-of-type {
@@ -307,9 +314,15 @@ h2 {
 
 h3 {
   z-index: 1;
+  font-family: fredoka;
+  font-weight: 100;
 }
 
-p {
+article p {
+  font-family: fredoka;
+  font-weight: 100;
+  font-size: 0.7em;
+  margin-bottom: 5em;
   z-index: 1;
 }
 
@@ -501,7 +514,7 @@ section:nth-of-type(5) article {
 
   clip-path: polygon(45% 0, 0 0, 0 100%, 42% 100%, 47% 93%, 57% 93%, 52% 100%, 100% 100%, 100% 0, 55% 0, 55% 4%, 45% 4%);
 
-  transform-origin: bottom right;
+  overflow: hidden;
 }
 
 /* focus en hover */
@@ -524,6 +537,12 @@ section:first-of-type article:focus {
 section:nth-of-type(2) {
   left: 62.5em;
   bottom: 8em;
+}
+
+/* popje + blokje spring */
+section:nth-of-type(2) button:hover,
+section:nth-of-type(2) button:focus {
+  animation: spring 0.6s linear infinite;
 }
 
 /* pet */
@@ -780,7 +799,7 @@ section:nth-of-type(2) article {
   border-top-color: var(--lego-bright-violet);
   box-shadow: inset 0.5em 0.5em 1em 0.5em var(--lego-bright-violet);
 
-  clip-path: none
+  clip-path: none;
 }
 
 /* focus en hover */
@@ -1002,6 +1021,11 @@ section:nth-of-type(4) button>div:first-of-type {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+/* hoed omhoog*/
+section:nth-of-type(4) button>div:first-of-type.click {
+  animation: hoed 0.5s linear 3;
 }
 
 /* hoed punt */
@@ -1468,6 +1492,42 @@ section:nth-of-type(5) article:focus {
   }
   100% {
     transform: rotate(0deg);
+  }
+}
+
+@keyframes hoed {
+  0% {
+    transform: translateY(0);
+  }
+  25% {
+    transform: translateY(-3em);
+  }
+  50% {
+    transform: translateY(-6em);
+  }
+  75% {
+      transform: translateY(-5em);
+  }
+  100% {
+    transform: translateY(0em);
+  }
+}
+
+@keyframes spring {
+  0% {
+    transform: translateY(0);
+  }
+  25% {
+    transform: translateY(-3em);
+  }
+  50% {
+    transform: translateY(-6em);
+  }
+  75% {
+      transform: translateY(-5em);
+  }
+  100% {
+    transform: translateY(0em);
   }
 }
 
