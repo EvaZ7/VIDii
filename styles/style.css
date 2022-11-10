@@ -44,6 +44,12 @@ button:not([disabled]) {
   --lego-red: rgb(214 0 38);
   --red-brick-shadow: rgba(85 1 1 / 0.3);
 
+  --lego-bright-violet: rgb(181 28 125);
+  --lego-medium-violet: rgb(232 80 156);
+
+  --lego-lavender-medium: rgb(150 117 180);
+  --lego-lavender: rgb(188 166 208);
+
   --lego-yellow: rgb(247 209 18);
   --lego-dark-yellow: rgb(141 120 1);
   --lego-brick-yellow: rgb(221 196 142);
@@ -53,9 +59,15 @@ button:not([disabled]) {
   --lego-yoda-green: rgb(111 148 122);
 
   --lego-royal-blue: rgb(120 191 234);
+  --lego-medium-blue: rgb(2 138 191);
   --lego-bright-blue: rgb(0 100 183);
+
+  --lego-red-orange: rgb(240 87 41);
+  --lego-bright-orange: rgb(245 125 32);
+
   --lego-brown: rgb(105 46 20);
   --lego-light-brown: rgb(165 42 42);
+
   --lego-silver: rgb(135 141 143);
   --lego-light-gray: rgb(211 211 211);
 }
@@ -207,7 +219,7 @@ ul:first-of-type {
   grid-template-rows: repeat(5, 4em);
 }
 
-/* nopjes */
+/* 1 blokje */
 ul:first-of-type li {
   --nop-dark: rgb(154 0 29);
   position: relative;
@@ -218,10 +230,16 @@ ul:first-of-type li {
   place-content:center;
 }
 
+/* hover en click blokje */
 ul:first-of-type li:hover, 
 ul:first-of-type li.change {
   --lego-red: var(--lego-yellow);
   --nop-dark: var(--lego-dark-yellow);
+}
+
+/* animatie hover 1 blokje */
+ul:first-of-type li:hover {
+  animation: move 0.3s linear 1;
 }
 
 /* blokjes nopjes */
@@ -285,6 +303,14 @@ h2 {
   font-family: fredoka;
   font-style: italic;
   -webkit-text-stroke: 0.08em var(--lego-black);
+}
+
+h3 {
+  z-index: 1;
+}
+
+p {
+  z-index: 1;
 }
 
 
@@ -421,13 +447,17 @@ section:first-of-type button div:nth-of-type(7).click {
 }
 
 /* hele popje */
-section:first-of-type > button:focus {
+section:first-of-type> button:focus,
+section:nth-of-type(2)> button:focus,
+section:nth-of-type(3)> button:focus,
+section:nth-of-type(4)> button:focus,
+section:nth-of-type(5)> button:focus {
   outline: none;
-  background: radial-gradient(circle, var(--lego-white) 0%, rgba(255,255,255,0) 60%);
+  filter: drop-shadow(0 0 1.5em var(--lego-red));
 }
 
 section:first-of-type> button:hover,
-section:first-of-type> button:focus{
+section:first-of-type> button:focus {
   transform-origin: 3.125em bottom;
   animation: wiggle 0.8s linear infinite;
 }
@@ -441,7 +471,10 @@ section:first-of-type> button:focus{
 /***************/
 
 section:first-of-type article,
-section:nth-of-type(2) article {
+section:nth-of-type(2) article,
+section:nth-of-type(3) article,
+section:nth-of-type(4) article,
+section:nth-of-type(5) article {
   position: absolute;
   left: 15.275em;
   bottom: 0em;
@@ -471,9 +504,10 @@ section:nth-of-type(2) article {
   transform-origin: bottom right;
 }
 
-/* een article heeft geen focus */
+/* focus en hover */
 section:first-of-type article:hover,
 section:first-of-type article:focus { 
+  outline: none;
   animation: rotate 1s linear;
   animation-fill-mode: forwards;
 }
@@ -672,7 +706,8 @@ section:nth-of-type(5) button>div:nth-of-type(2)>div:nth-of-type(3) div:first-of
 
 /* handje rechts */
 section:nth-of-type(2) button>div:nth-of-type(4)>div:nth-of-type(3) div:nth-of-type(2),
-section:nth-of-type(4) button>div:nth-of-type(4)>div:nth-of-type(3) div:nth-of-type(2) { 
+section:nth-of-type(4) button>div:nth-of-type(4)>div:nth-of-type(3) div:nth-of-type(2),
+section:nth-of-type(5) button>div:nth-of-type(2)>div:nth-of-type(3) div:nth-of-type(2) { 
   margin-top: 0.1em;
   margin-left: -0.2em;
 
@@ -736,17 +771,24 @@ section:nth-of-type(4) button>div:nth-of-type(6) div:nth-of-type(2) {
 section:nth-of-type(2) article {
   left: 15.275em;
 
-  background-color: var(--lego-green);
+  background-color: var(--lego-medium-violet);
   border: inset 1em;
   border-top: inset 0.5em;
   border-right: inset 1em;
-  border-color: var(--lego-dark-green);
-  border-left-color: var(--lego-green);
-  border-top-color: var(--lego-green);
-  /* outline: 0.5em solid var(--lego-green); */
-  box-shadow: inset 0.5em 0.5em 1em 0.5em var(--lego-dark-green);
+  border-color: var(--lego-bright-violet);
+  border-left-color: var(--lego-bright-violet);
+  border-top-color: var(--lego-bright-violet);
+  box-shadow: inset 0.5em 0.5em 1em 0.5em var(--lego-bright-violet);
 
   clip-path: none
+}
+
+/* focus en hover */
+section:nth-of-type(2) article:hover,
+section:nth-of-type(2) article:focus {
+  outline: none;
+  animation: rotatetwo 1s linear;
+  animation-fill-mode: forwards;
 }
 
 
@@ -890,6 +932,60 @@ section:nth-of-type(3) button>div:nth-of-type(7) div:first-of-type {
 
 
 
+/***************/
+/*lego blokje 3*/
+/***************/
+
+/* hele blokje */
+section:nth-of-type(3) article {
+  left: 15.275em;
+  bottom: 0.5em;
+
+  background-color: var(--lego-bright-orange);
+  border: inset 1em;
+  border-top: inset 0.5em;
+  border-right: inset 1em;
+  border-color: var(--lego-red-orange);
+  border-left-color: var(--lego-red-orange);
+  border-top-color: var(--lego-red-orange);
+  box-shadow: inset 0.5em 0.5em 1em 0.5em var(--lego-red-orange);
+
+  outline: 0.5em solid var(--lego-bright-orange);
+
+  clip-path: none
+}
+
+/* nopjes in blokje */
+section:nth-of-type(3) article>div {
+  position: absolute;
+
+  height: 12em;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+/* elk nopje in blokje */
+section:nth-of-type(3) article div div {
+  width: 3em;
+  height: 3em;
+
+  border: 0.5em solid var(--lego-red-orange);
+  border-radius: 5em;
+}
+
+/* focus en hover */
+section:nth-of-type(3) article:hover,
+section:nth-of-type(3) article:focus {
+  outline: none;
+  animation: rotatethree 1s linear;
+  animation-fill-mode: forwards;
+}
+
+
+
 
 /***************/
 /*lego poppetje 4*/
@@ -1009,6 +1105,71 @@ section:nth-of-type(4) button>div:nth-of-type(6) {
 
 
 
+/***************/
+/*lego blokje 4*/
+/***************/
+
+section:nth-of-type(4) article {
+  left: 15.275em;
+  bottom: 0.5em;
+
+  background-color: var(--lego-medium-blue);
+  border: inset 1em;
+  border-top: inset 0.5em;
+  border-right: inset 1em;
+  border-color: var(--lego-bright-blue);
+  border-left-color: var(--lego-bright-blue);
+  border-top-color: var(--lego-bright-blue);
+  box-shadow: inset 0.5em 0.5em 1em 0.5em var(--lego-bright-blue);
+
+  outline: 0.5em solid var(--lego-medium-blue);
+
+  clip-path: none
+}
+
+/* nopjes in blokje */
+section:nth-of-type(4) article>div {
+  position: absolute;
+
+  height: 12em;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+/* elk nopje in blokje */
+section:nth-of-type(4) article div div:first-of-type,
+section:nth-of-type(4) article div div:nth-of-type(2),
+section:nth-of-type(4) article div div:nth-of-type(3) {
+  width: 3em;
+  height: 3em;
+
+  border: 0.5em solid var(--lego-bright-blue);
+  border-radius: 5em;
+}
+
+/* streepje door nopjes */
+section:nth-of-type(4) article div div:nth-of-type(4) {
+  position: absolute;
+
+  background-color: var(--lego-medium-blue);
+
+  width: 0.2em;
+  height: 10.5em;
+}
+
+/* focus en hover */
+section:nth-of-type(4) article:hover,
+section:nth-of-type(4) article:focus {
+  outline: none;
+  animation: rotatefour 1s linear;
+  animation-fill-mode: forwards;
+} 
+
+
+
 
 /***************/
 /*lego poppetje 5*/
@@ -1032,6 +1193,11 @@ section:nth-of-type(5) button>div:nth-of-type(2)>div:nth-of-type(2) {
   background-color: var(--lego-brick-yellow);
 
   box-shadow: inset 0.6em 0.3em 0.5em var(--lego-silver);
+}
+
+/* torso pak*/
+section:nth-of-type(5) button>div:nth-of-type(2)>div:nth-of-type(2) img{
+  width: 5.1em;
 }
 
 /* arm links */
@@ -1073,6 +1239,73 @@ section:nth-of-type(5) button>div:nth-of-type(3) div:nth-of-type(2) {
 
   box-shadow: inset 0.3em 0.05em 0.3em var(--lego-silver);
 }
+
+
+
+/***************/
+/*lego blokje 5*/
+/***************/
+
+section:nth-of-type(5) article {
+  left: 15.275em;
+  bottom: 0.5em;
+
+  background-color: var(--lego-lavender);
+  border: inset 1em;
+  border-top: inset 0.5em;
+  border-right: inset 1em;
+  border-color: var(--lego-lavender-medium);
+  border-left-color: var(--lego-lavender-medium);
+  border-top-color: var(--lego-lavender-medium);
+  box-shadow: inset 0.5em 0.5em 1em 0.5em var(--lego-lavender-medium);
+
+  outline: 0.5em solid var(--lego-lavender);
+
+  clip-path: none
+}
+
+/* nopjes in blokje */
+section:nth-of-type(5) article>div {
+  position: absolute;
+
+  height: 12em;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+/* elk nopje in blokje */
+section:nth-of-type(5) article div div:first-of-type,
+section:nth-of-type(5) article div div:nth-of-type(2),
+section:nth-of-type(5) article div div:nth-of-type(3) {
+  z-index: 1;
+  background-color: var(--lego-lavender);
+  width: 3em;
+  height: 3em;
+
+  border: 0.5em solid var(--lego-lavender-medium);
+  border-radius: 5em;
+}
+
+/* streepje door nopjes */
+section:nth-of-type(5) article div div:nth-of-type(4) {
+  position: absolute;
+
+  background-color: var(--lego-lavender-medium);
+
+  width: 5em;
+  height: 0.3em;
+}
+
+section:nth-of-type(5) article:hover,
+section:nth-of-type(5) article:focus {
+  outline: none;
+  animation: rotatefive 1s linear, rotatefivenop 1s linear;
+  animation-fill-mode: forwards;
+}
+
 
 
 /********************/
@@ -1123,19 +1356,134 @@ section:nth-of-type(5) button>div:nth-of-type(3) div:nth-of-type(2) {
   }
 }
 
+/* blokje 2 */
+@keyframes rotatetwo {
+  0% {
+    transform: rotate3d(0);
+    height: 14em;
+  }
+  50% {
+    transform: rotate3d(1, 1, 1, 45deg);
+  }
+  100% {
+    height: 25em;
+    border: inset 2.5em;
+    border-top: inset 1em;
+    border-right: inset 2em;
+
+    border-color: var(--lego-bright-violet);
+    border-left-color: var(--lego-bright-violet);
+    border-top-color: var(--lego-bright-violet);
+  }
+}
+
+/* blokje 3 */
+@keyframes rotatethree {
+  0% {
+    transform: rotate3d(0);
+    height: 14em;
+    outline: 0.5em solid var(--lego-bright-orange);
+  }
+  50% {
+    transform: rotate3d(1, 1, 1, 45deg);
+    outline: 0.5em solid var(--lego-bright-orange);
+  }
+  100% {
+    height: 25em;
+    border: inset 2.5em;
+    border-top: inset 1em;
+    border-right: inset 2em;
+
+    border-color: var(--lego-red-orange);
+    border-left-color: var(--lego-red-orange);
+    border-top-color: var(--lego-red-orange);
+
+    outline: 0.5em solid var(--lego-bright-orange);
+  }
+}
+
+/* blokje 4 */
+@keyframes rotatefour {
+  0% {
+    transform: rotate3d(0);
+    height: 14em;
+    outline: 0.5em solid var(--lego-medium-blue);
+  }
+  50% {
+    transform: rotate3d(1, 1, 1, 45deg);
+    outline: 0.5em solid var(--lego-medium-blue);
+  }
+  100% {
+    height: 25em;
+    border: inset 2.5em;
+    border-top: inset 1em;
+    border-right: inset 2em;
+
+    border-color: var(--lego-bright-blue);
+    border-left-color: var(--lego-bright-blue);
+    border-top-color: var(--lego-bright-blue);
+
+    outline: 0.5em solid var(--lego-medium-blue);
+  }
+}
+
+/* blokje 5 */
+@keyframes rotatefive {
+  0% {
+    transform: rotate3d(0);
+    height: 14em;
+    outline: 0.5em solid var(--lego-lavender);
+  }
+  50% {
+    transform: rotate3d(1, 1, 1, 45deg);
+    outline: 0.5em solid var(--lego-lavender);
+  }
+  100% {
+    height: 24em;
+    border: inset 2.5em;
+    border-top: inset 1em;
+    border-right: inset 2em;
+
+    border-color: var(--lego-lavender-medium);
+    border-left-color: var(--lego-lavender-medium);
+    border-top-color: var(--lego-lavender-medium);
+
+    outline: 0.5em solid var(--lego-lavender);
+  }
+}
+
+/* trap blokje */
+@keyframes move {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-5deg);
+  }
+  50% {
+    transform: rotate(0deg);
+  }
+  75% {
+    transform: rotate(5deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
 /********************/
 /*******MEDIA********/
 /********************/
 
-/*darkmode*/
+/* darkmode */
 @media (prefers-color-scheme: dark) {
   
-  /*verander cursor*/
+  /* verander cursor */
   *, *::after, *::before {
     cursor: url('../images/cursorwhite.svg'), auto;
   }
 
-  /*Verander achtegrond*/
+  /* verander achtegrond */
   main {
     background-image: url("../images/legoblueprint.jpeg");
   }
@@ -1143,8 +1491,17 @@ section:nth-of-type(5) button>div:nth-of-type(3) div:nth-of-type(2) {
     background-color: rgb(18 18 36);
   }
 
-  /*Verander tekst*/
+  /* verander tekst */
   header p {
     color: var(--color-text);
+  }
+  
+  /* hele popje outline kleur */
+  section:first-of-type> button:focus,
+  section:nth-of-type(2)> button:focus,
+  section:nth-of-type(3)> button:focus,
+  section:nth-of-type(4)> button:focus,
+  section:nth-of-type(5)> button:focus {
+    filter: drop-shadow(0 0 1.5em var(--lego-white));
   }
 }

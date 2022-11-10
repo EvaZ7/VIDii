@@ -171,6 +171,9 @@ Nb. Wees specifiek ('css-tricks' als bron is bijv. niet specifiek genoeg).
 3. Icons. (z.d.). Skull crossbones Icons Download for Free in PNG and SVG. Geraadpleegd op 8 november 2022, van https://icons8.com/icons/set/skull-crossbones
 4. Crawforty. (z.d.). LEGO Captain Redbeard Minifigure. Geraadpleegd op 8 november 2022, van https://www.crawforty.xyz/ProductDetail.aspx?iid=171370287&pr=42.88
 5. LEGO Yoda Head (41880) | Brick Owl - LEGO Marketplace. (z.d.). Brick Owl. Geraadpleegd op 9 november 2022, van https://www.brickowl.com/catalog/lego-yoda-head-41880 
+6. Bricklink. (z.d.). BrickLink Reference Catalog - Large Image of Minifigure sw0051. Geraadpleegd op 10 november 2022, van https://www.bricklink.com/catalogItemPic.asp?M=sw0051
+
+https://www.google.com/search?q=lego+yoda+minifigure+2002+head&tbm=isch&ved=2ahUKEwitxPq90aH7AhXROewKHanZDh4Q2-cCegQIABAA&oq=lego+yoda+minifigure+2002+head&gs_lcp=CgNpbWcQAzoECCMQJ1C4ClipE2DCFmgAcAB4AIABPYgBxQKSAQE2mAEAoAEBqgELZ3dzLXdpei1pbWfAAQE&sclient=img&ei=DOVrY62OEdHzsAeps7vwAQ&bih=725&biw=1439&rlz=1C5CHFA_enNL918NL918#imgrc=JUyJel8D0hkgLM
 
 https://www.sinds1971.nl/cssvoordedames/8-animations.html
 http://www.jennyscrayoncollection.com/2021/06/all-current-lego-colors.html
