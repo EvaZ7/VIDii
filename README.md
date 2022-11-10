@@ -156,13 +156,13 @@ Mijn startniveau is Rood
 
   ### Je uitkomst - karakteristiek screenshot(s):
 
-  <img src="readme-images/finalresult2" width="375px" alt="final ontwerp">
+  <img src="readme-images/finalresult2.png" width="375px" alt="final ontwerp">
 
   Mijn eindresultaat is een lego trap die verschillende interactieve elementen bevat die ieder hun eigen vormgeveingen interactie hebben.
 
   ### Dit ging goed/Heb ik geleerd: 
 
-  <img src="readme-images/finalresult1" width="375px" alt="top">
+  <img src="readme-images/finalresult1.png" width="375px" alt="top">
 
   Ik heb veel geleerd om gradients te gebruiken en hoe ik deze kan toepassen. Dit zie je terug bijvoorbeeld in de baard van de tovenaar. De achtergrondafbeedling bestaat uit een linear gradient. Ook heb ik geleerd om elementen vorm te geven (poppetjes) te maken in CSS met als doel geen afbeeldingen te gebruiken.
 
@@ -170,7 +170,7 @@ Mijn startniveau is Rood
 
   Het animaren van de poppetjes bleef vrij lastig voor sommige. Ik kan ze op en neer laten bewegen en heen en weer. Maar ik had graag nog meer kunnen willen doen.
 
-  <img src="readme-images/finalresultlastig" width="375px" alt="bummer">
+  <img src="readme-images/finalresultlastig.png" width="375px" alt="bummer">
 
 </details>
 
