@@ -194,5 +194,6 @@ Nb. Wees specifiek ('css-tricks' als bron is bijv. niet specifiek genoeg).
 8. The Brothers Brick. (2018, 31 augustus). LEGO Minifigure 40 Years Infographic. https://www.brothers-brick.com/2018/08/31/the-minifigure-turns-40-a-colorful-history/lego-minifigure-40-years-infographic/
 9. Quatrain, S. (2022, 10 november). A Short History of the LEGO Brick (1949-Today) PART ONE. http://snakeandboris.blogspot.com/2016/06/a-short-history-of-lego-brick-1949.html
 10. Lego brick Icons Download for Free in PNG and SVG. (z.d.). Geraadpleegd op 10 november 2022, van https://icons8.com/icons/set/lego-brick 
+11. LEGO® History - LEGO.com US. (z.d.). https://www.lego.com/en-us/history/
 
 </details>
